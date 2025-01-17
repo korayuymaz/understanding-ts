@@ -1,7 +1,10 @@
+type Combinable = number | string; // type alias for union type
+type ConversionDescriptor = "as-number" | "as-text"; // type alias for literal type
+
 function combine(
-  input1: number | string, // union type
-  input2: number | string, // union type
-  resultConversion: "as-number" | "as-text" // literal type
+  input1: Combinable, // type alias
+  input2: Combinable, // type alias
+  resultConversion: ConversionDescriptor // type alias
 ) {
   let result: number | string;
   if (
@@ -12,12 +15,6 @@ function combine(
   } else {
     result = input1.toString() + input2.toString();
   }
-
-  // if (resultConversion === "as-number") {
-  //   return +result;
-  // } else if (resultConversion === "as-text") {
-  //   return result.toString();
-  // }
 
   return result;
 }
