@@ -1,16 +1,21 @@
+enum Role {
+  ADMIN = 5,
+  READ_ONLY = 6,
+  AUTHOR = 7,
+}
+
 const person: {
   name: string;
   age: number;
   hobbies: string[];
-  role: [number, string]; // Tuple
+  role: Role;
 } = {
   name: "Maximilian",
   age: 30,
   hobbies: ["Sports", "Cooking"],
-  role: [2, "author"],
+  role: Role.ADMIN,
 };
 
-person.role.push("admin");
 // person.role[1] = 10;  // !!! ERROR !!!
 // person.role = [0, "admin", "user"]; // !!! ERROR !!!
 let favoriteActivities: string[];
