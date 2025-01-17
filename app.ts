@@ -11,3 +11,10 @@ if (typeof userInput === "string") {
   userName = userInput;
 }
 
+function generateErrror(message: string, code: number): never {
+  // never is a type that is never returned
+  throw { message: message, errorCode: code };
+}
+
+// const result = generateErrror("An error occurred!", 500); // This will crash the script
+generateErrror("An error occurred!", 500);
