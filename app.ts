@@ -9,3 +9,9 @@ function printResultVoid(num: number): void {
 }
 
 printResultVoid(addNumbers(5, 12));
+
+let combineValues: (a: number, b: number) => number; // Function type 
+
+combineValues = addNumbers;
+
+console.log(combineValues(8, 8));
