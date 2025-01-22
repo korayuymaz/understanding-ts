@@ -1,17 +1,14 @@
-class Department {
+abstract class Department {
   static fiscalYear = 2020; // static property
   protected employees: string[] = [];
 
-  constructor(private readonly id: string, public name: string) {}
-
+  constructor(protected readonly id: string, public name: string) {}
   static createEmployee(name: string) {
     // static method can be called without creating an instance of the class
     return { name: name };
   }
 
-  describe(this: Department) {
-    console.log(`Department (${this.id}): ${this.name} `);
-  }
+  abstract describe(this: Department): void; // abstract method
 
   addEmployee(employee: string) {
     // validation etc
@@ -29,6 +26,10 @@ class ITDepartment extends Department {
   constructor(id: string, admins: string[]) {
     super(id, "IT");
     this.admins = admins;
+  }
+
+  describe() {
+    console.log("IT Department - ID: " + this.id);
   }
 }
 
@@ -52,6 +53,10 @@ class AccountingDepartment extends Department {
       throw new Error("Please pass in a valid value!");
     }
     this.addReport(value);
+  }
+
+  describe(this: Department): void {
+    console.log("Accounting Department - ID: " + this.id);
   }
 
   addEmployee(employee: string): void {
