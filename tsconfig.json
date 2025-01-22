@@ -116,7 +116,9 @@
   },
   "exclude": [
     "node_modules",
-    "./types" /* Exclude files from compilation. */
+    "./types",
+    "./classes-interface"
+    /* Exclude files from compilation. */
   ] /* Exclude files from compilation. This is a default option */
 }
 
