@@ -6,6 +6,7 @@ interface Named {
   // interface is a blueprint for an object
   // that defines the properties and methods that a class must implement
   readonly name: string;
+  outputName?: string; // optional property
 }
 
 interface Greetable extends Named {
