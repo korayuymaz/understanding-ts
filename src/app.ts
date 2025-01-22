@@ -95,3 +95,11 @@ function moveAnimal(animal: Animal) {
   }
   console.log("Moving at speed: " + speed);
 }
+
+const userInputElement = <HTMLInputElement>( // type casting
+  document.getElementById("user-input")!
+);
+
+
+userInputElement.value = "Hi there!";
+// userInputElement.value = 10; // error because value is a string
