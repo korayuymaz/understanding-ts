@@ -23,6 +23,8 @@ type Universal = Combinable & Numeric;
 
 function add(a: number, b: number): number; // function overloading
 function add(a: string, b: string): string; // function overloading
+function add(a: number, b: string): string; // function overloading
+function add(a: string, b: number): string; // function overloading
 function add(a: Combinable, b: Combinable) {
   if (typeof a === "string" || typeof b === "string") {
     // type guard
