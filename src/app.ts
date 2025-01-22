@@ -1,3 +1,7 @@
+interface AddFn {
+  (a: number, b: number): number;
+}
+
 interface Named {
   // interface is a blueprint for an object
   // that defines the properties and methods that a class must implement
