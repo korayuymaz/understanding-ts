@@ -31,12 +31,42 @@ function add(a: Combinable, b: Combinable) {
 
 type UnknownEmployee = Admin | GeneralEmployee;
 
-function printEmployeeInformation(emp: UnknownEmployee) { 
+function printEmployeeInformation(emp: UnknownEmployee) {
   console.log("Name: " + emp.name);
-  if ("privileges" in emp) { // type guard
+  if ("privileges" in emp) {
+    // type guard
     console.log("Privileges: " + emp.privileges);
   }
-  if ("startDate" in emp) { // type guard
+  if ("startDate" in emp) {
+    // type guard
     console.log("Start Date: " + emp.startDate);
+  }
+}
+
+class Car {
+  drive() {
+    console.log("Driving...");
+  }
+}
+
+class Truck {
+  drive() {
+    console.log("Driving a truck...");
+  }
+
+  loadCargo(amount: number) {
+    console.log("Loading cargo..." + amount);
+  }
+}
+
+type Vehicle = Car | Truck;
+
+const v1 = new Car();
+const v2 = new Truck();
+
+function useVehicle(vehicle: Vehicle) {
+  vehicle.drive();
+  if (vehicle instanceof Truck) { // type guard for classes
+    vehicle.loadCargo(1000);
   }
 }
