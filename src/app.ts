@@ -21,6 +21,8 @@ type Numeric = number | boolean;
 
 type Universal = Combinable & Numeric;
 
+function add(a: number, b: number): number; // function overloading
+function add(a: string, b: string): string; // function overloading
 function add(a: Combinable, b: Combinable) {
   if (typeof a === "string" || typeof b === "string") {
     // type guard
@@ -28,6 +30,11 @@ function add(a: Combinable, b: Combinable) {
   }
   return a + b;
 }
+
+const result = add("Max", " Schwarz");
+result.split(" ");
+
+//#region
 
 type UnknownEmployee = Admin | GeneralEmployee;
 
@@ -115,3 +122,5 @@ const errorBag: ErrorContainer = {
   email: "Not a valid email!",
   username: "Must start with a capital character!",
 };
+
+//#endregion
