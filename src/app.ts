@@ -96,10 +96,13 @@ function moveAnimal(animal: Animal) {
   console.log("Moving at speed: " + speed);
 }
 
-const userInputElement = <HTMLInputElement>( // type casting
-  document.getElementById("user-input")!
-);
+const userInputElement = <
+  HTMLInputElement // type casting
+>document.getElementById("user-input")!;
 
+const userInputElement2 = document.getElementById(
+  "user-input"
+)! as HTMLInputElement; // type casting
 
 userInputElement.value = "Hi there!";
 // userInputElement.value = 10; // error because value is a string
