@@ -44,8 +44,15 @@ const fetchedUserData = {
 
 console.log(fetchedUserData?.job?.title); // optional chaining
 
-//#region
+const userInput = null;
 
+const storedData = userInput ?? "DEFAULT";
+// nullish coalescing operator (??) - only null or undefined will trigger the default value
+
+console.log(storedData); // DEFAULT
+
+//#region
+/*
 type UnknownEmployee = Admin | GeneralEmployee;
 
 function printEmployeeInformation(emp: UnknownEmployee) {
@@ -132,5 +139,5 @@ const errorBag: ErrorContainer = {
   email: "Not a valid email!",
   username: "Must start with a capital character!",
 };
-
+*/
 //#endregion
