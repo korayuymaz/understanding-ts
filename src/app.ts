@@ -1,7 +1,13 @@
 class Department {
+  static fiscalYear = 2020; // static property
   protected employees: string[] = [];
 
   constructor(private readonly id: string, public name: string) {}
+
+  static createEmployee(name: string) {
+    // static method can be called without creating an instance of the class
+    return { name: name };
+  }
 
   describe(this: Department) {
     console.log(`Department (${this.id}): ${this.name} `);
