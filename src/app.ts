@@ -13,3 +13,10 @@ function merge<T extends object, U extends object>(objA: T, objB: U) {
 
 const mergedObj = merge({ name: "Max", hobbies: ["Sports"] }, { age: 30 });
 console.log(mergedObj.name); // Max
+
+function extractAndConvert<T extends object, U extends keyof T>(
+  obj: T,
+  key: U
+) {
+  return obj[key];
+}
