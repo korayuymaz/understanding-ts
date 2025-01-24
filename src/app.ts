@@ -21,7 +21,7 @@ function extractAndConvert<T extends object, U extends keyof T>(
   return obj[key];
 }
 
-class DataStorage<T> {
+class DataStorage<T extends string | number | boolean> {
   // T is a generic type parameter
   private data: T[] = [];
 
@@ -30,6 +30,9 @@ class DataStorage<T> {
   }
 
   removeItem(item: T) {
+    if (this.data.indexOf(item) === -1) {
+      return;
+    }
     this.data.splice(this.data.indexOf(item), 1);
   }
 
