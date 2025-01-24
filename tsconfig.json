@@ -117,7 +117,8 @@
   "exclude": [
     "node_modules",
     "./types",
-    "./classes-interface"
+    "./classes-interface",
+    "./advanced-types.ts"
     /* Exclude files from compilation. */
   ] /* Exclude files from compilation. This is a default option */
 }
